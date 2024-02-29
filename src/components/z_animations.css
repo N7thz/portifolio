@@ -1,0 +1,9 @@
+.line {
+    animation: blinkCursor 1s steps(60) infinite normal;
+}
+
+@keyframes blinkCursor {
+    from {
+        background-color: transparent;
+    }
+}
