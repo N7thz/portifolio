@@ -1,6 +1,7 @@
 import { FC } from "react"
-import { Card, CardTitle, CardDescription } from "./ui/card"
+import { Card, CardTitle, CardDescription, CardFooter } from "./ui/card"
 import Image from "next/image"
+import Link from "next/link"
 import Gif from "@/assets/images/gif-home.gif"
 import "./z_animations.css"
 import { CardHomeProps } from "@/@types"
@@ -28,6 +29,8 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 >
                     {summary}
                 </CardDescription>
+                <CardFooter>
+                </CardFooter>
             </div>
             <Image
                 src={Gif}
