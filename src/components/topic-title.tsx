@@ -2,7 +2,7 @@ import { FC } from "react"
 import { TopicProps } from "@/@types"
 import { ChevronLeft, ChevronRight, Slash } from "lucide-react"
 
-export const Topic: FC<TopicProps> = ({ topic }) => {
+export const TopicTitle: FC<TopicProps> = ({ topic }) => {
 
     return (
 

@@ -10,7 +10,9 @@ export default async function Home({ params: { lang } }: Params) {
 
 	return (
 
-		<div className="min-h-screen bg-zinc-50 dark:bg-zinc-900">
+		<div
+			className="min-h-screen bg-zinc-50 dark:bg-zinc-900"
+		>
 			<Header header={header} />
 			<Main
 				header={header}
@@ -19,3 +21,7 @@ export default async function Home({ params: { lang } }: Params) {
 		</div>
 	)
 }
+
+
+
+

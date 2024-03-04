@@ -6,10 +6,10 @@ import Link from "next/link"
 import { HeaderProps } from "@/@types"
 
 export const Header: FC<HeaderProps> = ({
-    header: { about, contact, projects }
+    header: { about, contact, projects, technologies }
 }) => {
 
-    const options: string[] = [about, projects, contact]
+    const options: string[] = [about, technologies, projects, contact]
 
     return (
 
@@ -25,10 +25,11 @@ export const Header: FC<HeaderProps> = ({
                     {options.map(option =>
 
                         <Link
+                            key={option}
                             href={`#${about}`}
                         >
                             <CardTitle
-                                key={option}
+
                                 className=" bg-gradient-to-b from-teal-500 to-green-300 dark:from-violet-600 dark:to-indigo-600 bg-clip-text text-transparent underline cursor-pointer duration-150 hover:scale-110"
                             >
                                 {option}
