@@ -18,6 +18,10 @@ export default async function Home({ params: { lang } }: Params) {
 				header={header}
 				main={main}
 			/>
+			<a href="/src/assets/curriculo-nathan-ferreira.pdf" target="_blank" rel="noopener noreferrer" download>
+				Download Catalog
+			</a>
+
 		</div>
 	)
 }

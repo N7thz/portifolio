@@ -14,7 +14,7 @@ export const Header: FC<HeaderProps> = ({
     return (
 
         <header
-            className="bg-gradient-to-r from-teal-500 to-green-300  dark:from-violet-600 dark:to-indigo-600 pb-1 mb-12 drop-shadow-2xl"
+            className="bg-gradient-to-r from-teal-500 to-green-300  dark:from-violet-600 dark:to-indigo-600 pb-1 drop-shadow-2xl z-50 fixed top-0 left-0 right-0 bottom-auto"
         >
             <Card
                 className="border-none rounded-none p-3 flex justify-between"
@@ -26,7 +26,7 @@ export const Header: FC<HeaderProps> = ({
 
                         <Link
                             key={option}
-                            href={`#${about}`}
+                            href={`#${option}`}
                         >
                             <CardTitle
 

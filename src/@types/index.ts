@@ -1,5 +1,6 @@
 import { Locale } from "@/i18n-config"
 import { StaticImageData } from "next/image"
+import { Dispatch, SetStateAction } from "react"
 
 export interface Params {
 	params: {
@@ -28,6 +29,11 @@ interface Main {
 export interface Dictionary {
 	header: HeaderProps
 	main: MainProps
+}
+
+export interface ProjectDescription {
+
+	description: string
 }
 
 export interface HeaderProps {
@@ -61,22 +67,28 @@ export interface TecnologiesProps {
 }
 
 export interface AboutProps {
-    about: string
-    aboutText: string
+	about: string
+	aboutText: string
 }
 
 export interface Technology {
-    id: number
-    name: string
-    image: StaticImageData
+	id: number
+	name: string
+	image: StaticImageData
 }
 
 export interface TecnologyCardProps {
-    tec: Technology
+	tec: Technology
 }
 
 export interface ProjectsProps {
-    projects: string
+	projects: string
+}
+
+export interface ProjectLang {
+
+	pt: Project[]
+	en: Project[]
 }
 
 export interface Project {
@@ -86,6 +98,12 @@ export interface Project {
 	description: string
 	cover: StaticImageData
 	video: string
-	technologies: Technology[]
+	technologies: string[]
 	repository: string
+}
+
+export interface LangContextProps {
+
+	lang: Locale
+	setLang: Dispatch<SetStateAction<Locale>>
 }

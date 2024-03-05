@@ -13,25 +13,30 @@ export const Main: FC<MainProps> = ({
     header: {
         about, contact, projects, technologies
     }
-}) =>
-    <main className="p-4 flex flex-col gap-8">
+}) => {
+    return (
 
-        <CardHome
-            message_animation={message_animation}
-            summary={summary}
-        />
+        <main className="p-4 flex flex-col gap-8 pt-32">
 
-        <About
-            about={about}
-            aboutText={aboutText}
-        />
+            <CardHome
+                message_animation={message_animation}
+                summary={summary}
+            />
 
-        <Tecnologies
-            technologies={technologies}
-        />
+            <About
+                about={about}
+                aboutText={aboutText}
+            />
 
-        <Projects
-            projects={projects}
-        />
-    </main>
+            <Tecnologies
+                technologies={technologies}
+            />
+
+            <Projects
+                projects={projects}
+            />
+        </main>
+    )
+}
+
 

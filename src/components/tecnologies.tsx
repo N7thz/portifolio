@@ -2,7 +2,7 @@ import { FC } from "react"
 import { TopicTitle } from "./topic-title"
 import { Card, CardHeader, CardTitle, CardContent } from "./ui/card"
 import { TecnologiesProps } from "@/@types"
-import { technologies as tecs } from "@/dictionaries/tecnologies"
+import { technologies as tecs } from "@/lib/tecnologies"
 import Image from "next/image"
 
 export const Tecnologies: FC<TecnologiesProps> = ({ technologies }) => {
