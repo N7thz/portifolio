@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Card, CardTitle } from "./ui/card"
+import { Card, CardTitle } from "../../ui/card"
 
 export interface TechCardProps {
     tech: string

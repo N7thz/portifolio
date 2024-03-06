@@ -1,6 +1,7 @@
 import { Params } from '@/@types';
-import { Header } from '@/components/header';
-import { Main } from '@/components/main';
+import { CarouselComponent } from '@/components/carousel';
+import { Header } from '@/components/header/header';
+import { Main } from '@/components/main/main';
 import { getDictionary } from '@/lib/get-dictionary';
 
 export default async function Home({ params: { lang } }: Params) {
@@ -11,17 +12,13 @@ export default async function Home({ params: { lang } }: Params) {
 	return (
 
 		<div
-			className="min-h-screen bg-zinc-50 dark:bg-zinc-900"
+			className="min-h-screen bg-zinc-50 dark:bg-zinc-950"
 		>
 			<Header header={header} />
 			<Main
 				header={header}
 				main={main}
 			/>
-			<a href="/src/assets/curriculo-nathan-ferreira.pdf" target="_blank" rel="noopener noreferrer" download>
-				Download Catalog
-			</a>
-
 		</div>
 	)
 }

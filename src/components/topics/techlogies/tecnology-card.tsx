@@ -1,17 +1,16 @@
-import Image from "next/image"
-import { Card, CardHeader, CardTitle } from "./ui/card"
 import { FC } from "react"
+import { Card, CardHeader, CardTitle } from "../../ui/card"
 import { TecnologyCardProps } from "@/@types"
+import Image from "next/image"
 
 export const TecnologyCard: FC<TecnologyCardProps> = ({ tec }) => {
 
-    const { id, image, name } = tec
+    const { image, name } = tec
 
     return (
 
         <Card
-            key={id}
-            className="w-1/6 flex flex-col items-center justify-between capitalize border border-primary"
+            className="w-48 flex flex-col items-center justify-between capitalize border-2 duration-500 border-zinc-500 hover:border-primary"
         >
             <Image
                 src={image}

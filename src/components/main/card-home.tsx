@@ -1,10 +1,11 @@
 import { FC } from "react"
-import { Card, CardTitle, CardDescription, CardFooter } from "./ui/card"
+import { Card, CardTitle, CardDescription, CardFooter } from "../ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import Gif from "@/assets/images/gif-home.gif"
-import "./z_animations.css"
+import "../z_animations.css"
 import { CardHomeProps } from "@/@types"
+import { Button } from "../ui/button"
 
 export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
 
@@ -29,7 +30,21 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 >
                     {summary}
                 </CardDescription>
-                <CardFooter>
+                <CardFooter className="h-full flex justify-end">
+                    <Button
+                        variant={"outline"}
+                        className="scale-110 border-primary hover:scale-105 duration-300"
+                    >
+                        <Link
+                            href="/pt/curriculo-nathan-ferreira.pdf"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            download
+                            className="text-lg p-1"
+                        >
+                            Download CV
+                        </Link>
+                    </Button>
                 </CardFooter>
             </div>
             <Image

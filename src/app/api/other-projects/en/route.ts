@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server"
-import { projects } from "@/lib/projects"
+import { otherProjects } from "@/lib/projects"
 
 export async function GET() {
 
-    return NextResponse.json(projects.en)
+    return NextResponse.json(otherProjects.en)
 }

@@ -2,13 +2,14 @@
 
 import { FC } from "react"
 import { ProjectsProps } from "@/@types"
-import { TopicTitle } from "./topic-title"
-import { 
-    Card, CardHeader, CardTitle, CardContent 
-} from "./ui/card"
-import { BestProjects } from "./best-projects"
+import { TopicTitle } from "../topic-title"
+import {
+    Card, CardHeader, CardTitle, CardContent
+} from "../../ui/card"
+import { HighLightProjects } from "./highlight-projects"
+import { OtherProjects } from "./other-projects"
 
-export const Projects: FC<ProjectsProps> = ({ projects }) => {
+export const Projects: FC<ProjectsProps> = ({ projects, highlihgt, other }) => {
 
     return (
 
@@ -24,7 +25,14 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
                 </CardTitle>
             </CardHeader>
             <CardContent className="flex flex-wrap justify-around gap-4">
-                <BestProjects />
+
+                <HighLightProjects 
+                    title={highlihgt}
+                />
+
+                <OtherProjects
+                    title={other}
+                />
             </CardContent>
         </Card>
     )

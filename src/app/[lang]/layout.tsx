@@ -22,7 +22,7 @@ export default function RootLayout(
     <html lang={lang} className="scroll-smooth">
       <body
         className={twMerge(
-          "scrollbar scrollbar-thumb-primary scrollbar-thumb-rounded-full scrollbar-w-2",
+          "scrollbar scrollbar-thumb-primary scrollbar-thumb-rounded-full scrollbar-w-2 overflow-x-hidden",
           firaCode.className
         )}
       >

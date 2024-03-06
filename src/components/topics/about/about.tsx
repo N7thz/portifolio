@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
-import { TopicTitle } from './topic-title'
-import { Card, CardHeader, CardTitle, CardContent } from './ui/card'
+import { TopicTitle } from '../topic-title'
+import { Card, CardHeader, CardTitle, CardContent } from '../../ui/card'
 import Image from 'next/image'
 import { AboutProps } from '@/@types'
 
-export const About:FC<AboutProps> = ({ about, aboutText}) => {
+export const About: FC<AboutProps> = ({ about, aboutText }) => {
 
     return (
 

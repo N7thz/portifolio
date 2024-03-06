@@ -1,6 +1,9 @@
 import { Locale } from "@/i18n-config"
 import { StaticImageData } from "next/image"
-import { Dispatch, SetStateAction } from "react"
+import { Dispatch, SetStateAction, ReactNode } from "react"
+import {
+	AnimationControls, Target, TargetAndTransition, Transition, VariantLabels
+} from "framer-motion"
 
 export interface Params {
 	params: {
@@ -24,6 +27,8 @@ interface Main {
 	message_animation: string
 	summary: string
 	aboutText: string
+	highlihgt: string
+	other: string
 }
 
 export interface Dictionary {
@@ -50,6 +55,8 @@ export interface MainProps extends HeaderProps {
 		message_animation: string
 		summary: string
 		aboutText: string
+		highlihgt: string
+		other: string
 	}
 }
 
@@ -83,6 +90,8 @@ export interface TecnologyCardProps {
 
 export interface ProjectsProps {
 	projects: string
+	other: string
+	highlihgt: string
 }
 
 export interface ProjectLang {
@@ -106,4 +115,21 @@ export interface LangContextProps {
 
 	lang: Locale
 	setLang: Dispatch<SetStateAction<Locale>>
+}
+
+export interface TypeProjectsProps {
+	title: string
+}
+
+export interface AnimationProps {
+	children: ReactNode
+	initial?: boolean | Target | VariantLabels
+	whileInView?: VariantLabels | TargetAndTransition
+	exit?: TargetAndTransition | VariantLabels
+	transition?: Transition
+	animate?: AnimationControls | TargetAndTransition | VariantLabels | boolean;
+}
+
+export interface ProjectsItemProps{
+    project: Project
 }
