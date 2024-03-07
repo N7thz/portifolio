@@ -16,6 +16,7 @@ export const Animation: FC<AnimationProps> = ({
             exit={exit}
             transition={transition}
             animate={animate}
+            className="flex items-center justify-center"
         >
             {children}
         </motion.div>

@@ -7,11 +7,11 @@ import { Projects } from "../topics/projects/projects"
 import { Animation } from "../animation"
 
 export const Main: FC<MainProps> = ({
-    main: {
-        message_animation, summary, aboutText, highlihgt, other
-    },
     header: {
         about, contact, projects, technologies
+    },
+    main: {
+        message_animation, summary, aboutText, highlihgt, other, go_to_code
     }
 }) => {
 
@@ -64,6 +64,7 @@ export const Main: FC<MainProps> = ({
                     other={other}
                     highlihgt={highlihgt}
                     projects={projects}
+                    go_to_code={go_to_code}
                 />
             </Animation>
         </main>

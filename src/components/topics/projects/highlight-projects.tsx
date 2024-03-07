@@ -1,17 +1,17 @@
 "use client"
 
+import { FC } from "react"
 import { TypeProjectsProps, Project } from "@/@types"
 import { Card, CardHeader, CardTitle, CardContent } from "../../ui/card"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "next/navigation"
-import Image from "next/image"
-import { TechCard } from "./tech-card"
 import { TopicTitle } from "../topic-title"
-import { FC } from "react"
 import { HighlightProjectsItem } from "./highlight-projects-item"
+import { Animation } from "@/components/animation"
+import { WindowProject } from "@/components/window-project"
 
 export const HighLightProjects: FC<TypeProjectsProps> = ({
-    title
+    title, go_to_code
 }) => {
 
     const lang = useParams().lang
@@ -32,8 +32,9 @@ export const HighLightProjects: FC<TypeProjectsProps> = ({
 
     return (
 
-        <Card className="p-3 flex flex-col gap-5">
-
+        <Card
+            className="w-full p-3 flex flex-col items-center gap-5 border-none"
+        >
             <CardHeader>
                 <CardTitle
                     className="text-2xl capitalize"
@@ -43,13 +44,27 @@ export const HighLightProjects: FC<TypeProjectsProps> = ({
                     />
                 </CardTitle>
             </CardHeader>
-            <CardContent>
-                {projectsResponse.map(project =>
-                    <HighlightProjectsItem
-                        key={project.id}
-                        project={project}
-                    />
-                )}
+            <CardContent
+                className="flex flex-col gap-8 justify-center items-center"
+            >
+                {
+                    projectsResponse.map((project, i) =>
+                        <Animation
+                            key={project.id}
+                            initial={{ opacity: 0, x: i % 2 ? -300 : 300 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: i % 2 ? -300 : 300 }}
+                            transition={{ duration: 0.7 }}
+                        >
+                            <WindowProject 
+                                project={project}
+                                go_to_code={go_to_code}
+                            >
+                                <HighlightProjectsItem project={project} />
+                            </WindowProject>
+                        </Animation>
+                    )
+                }
             </CardContent>
         </Card>
     )

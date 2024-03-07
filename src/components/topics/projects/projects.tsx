@@ -9,28 +9,32 @@ import {
 import { HighLightProjects } from "./highlight-projects"
 import { OtherProjects } from "./other-projects"
 
-export const Projects: FC<ProjectsProps> = ({ projects, highlihgt, other }) => {
+export const Projects: FC<ProjectsProps> = ({
+    projects, highlihgt, other, go_to_code
+}) => {
 
     return (
 
         <Card
             id={projects}
-            className="border-2 border-primary drop-shadow-xl"
+            className="w-full border-2 border-primary drop-shadow-xl"
         >
             <CardHeader>
-                <CardTitle className="capitalize text-3xl flex items-center">
+                <CardTitle
+                    className="capitalize text-3xl flex items-center"
+                >
                     <TopicTitle
                         topic={projects}
                     />
                 </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap justify-around gap-4">
-
-                <HighLightProjects 
+            <CardContent className="w-full flex flex-col items-center gap-4">
+                <HighLightProjects
+                    go_to_code={go_to_code}
                     title={highlihgt}
                 />
-
                 <OtherProjects
+                    go_to_code={go_to_code}
                     title={other}
                 />
             </CardContent>

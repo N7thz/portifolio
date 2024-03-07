@@ -29,6 +29,7 @@ interface Main {
 	aboutText: string
 	highlihgt: string
 	other: string
+	go_to_code: string
 }
 
 export interface Dictionary {
@@ -57,6 +58,7 @@ export interface MainProps extends HeaderProps {
 		aboutText: string
 		highlihgt: string
 		other: string
+		go_to_code: string
 	}
 }
 
@@ -92,6 +94,7 @@ export interface ProjectsProps {
 	projects: string
 	other: string
 	highlihgt: string
+	go_to_code: string
 }
 
 export interface ProjectLang {
@@ -119,6 +122,7 @@ export interface LangContextProps {
 
 export interface TypeProjectsProps {
 	title: string
+	go_to_code: string
 }
 
 export interface AnimationProps {
@@ -132,4 +136,11 @@ export interface AnimationProps {
 
 export interface ProjectsItemProps{
     project: Project
+}
+
+export interface WindowProjectProps {
+
+    children: ReactNode
+    project: Project
+	go_to_code:string
 }

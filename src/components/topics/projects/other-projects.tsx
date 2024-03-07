@@ -8,9 +8,10 @@ import { useParams } from "next/navigation"
 import { TopicTitle } from "../topic-title"
 
 import { CarouselComponent } from "@/components/carousel"
+import { Animation } from "@/components/animation"
 
 export const OtherProjects: FC<TypeProjectsProps> = ({
-    title
+    title, go_to_code
 }) => {
 
     const lang = useParams().lang
@@ -32,7 +33,7 @@ export const OtherProjects: FC<TypeProjectsProps> = ({
     return (
 
         <Card
-            className="w-full p-3 flex flex-col items-center gap-5 border-none"
+            className="w-2/3 p-3 flex flex-col items-center gap-5 border-none"
         >
 
             <CardHeader>
@@ -45,9 +46,17 @@ export const OtherProjects: FC<TypeProjectsProps> = ({
                 </CardTitle>
             </CardHeader>
 
-            <CarouselComponent
-                projects={projectsResponse}
-            />
+            <Animation
+                initial={{ opacity: 0, scale: 0 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <CarouselComponent
+                    go_to_code={go_to_code}
+                    projects={projectsResponse}
+                />
+            </Animation>
         </Card>
     )
 }

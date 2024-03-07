@@ -3,6 +3,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { TechCard } from "./tech-card"
 import { ProjectsItemProps } from "@/@types"
 import Image from "next/image"
+import { Animation } from "@/components/animation"
 
 
 export const OtherProjectsItem: FC<ProjectsItemProps> = ({ project }) => {
@@ -32,12 +33,21 @@ export const OtherProjectsItem: FC<ProjectsItemProps> = ({ project }) => {
                 <CardContent
                     className="w-full flex flex-wrap items-center justify-center gap-3 text-lg m-2"
                 >
-                    {technologies.map((tech, index) =>
-                        <TechCard
-                            key={index}
-                            tech={tech}
-                        />
-                    )}
+                    {
+                        technologies.map((tech, i) =>
+                            <Animation
+                                key={i}
+                                initial={{ opacity: 0, scale: 0 }}
+                                whileInView={{ opacity: 1, scale: 1 }}
+                                exit={{ opacity: 0, scale: 0 }}
+                                transition={{ duration: 0.3, delay: i * 0.2 }}
+                            >
+                                <TechCard
+                                    tech={tech}
+                                />
+                            </Animation>
+                        )
+                    }
                 </CardContent>
             </div>
         </Card>

@@ -12,7 +12,7 @@ export const TopicTitle: FC<TopicProps> = ({ topic }) => {
                     size={32}
                     className="absolute -left-4 top-1"
                 />
-                <span className="italic">
+                <span className="italic text-primary-foreground">
                     {topic}
                 </span>
             </div>

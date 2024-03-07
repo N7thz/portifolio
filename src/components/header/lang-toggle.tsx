@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dropdown-menu"
 import { usePathname, useRouter } from "next/navigation"
 import { i18n } from "@/i18n-config"
+import Link from "next/link"
 
 export function LangToggle() {
 
@@ -41,14 +42,16 @@ export function LangToggle() {
                 </Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end">
-                {i18n.locales.map(locale =>
+                {i18n.locales.map((locale, index) =>
                     <DropdownMenuItem
-                        key={locale}
-                        onClick={() => {
-                            push(redirectedPathName(locale))
-                        }}
+                        key={index}
+                        asChild
                     >
-                        {locale}
+                        <Link
+                            href={redirectedPathName(locale)}
+                        >
+                            {locale}
+                        </Link>
                     </DropdownMenuItem>
                 )}
             </DropdownMenuContent >
