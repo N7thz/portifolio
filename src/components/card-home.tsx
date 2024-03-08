@@ -1,11 +1,11 @@
 import { FC } from "react"
-import { Card, CardTitle, CardDescription, CardFooter } from "../ui/card"
+import { Card, CardTitle, CardDescription, CardFooter } from "./ui/card"
+import { Button } from "./ui/button"
 import Image from "next/image"
 import Link from "next/link"
-import Gif from "@/assets/images/gif-home.gif"
-import "../z_animations.css"
 import { CardHomeProps } from "@/@types"
-import { Button } from "../ui/button"
+import "./z_animations.css"
+import Gif from "@/assets/images/gif-home.gif"
 
 export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
 

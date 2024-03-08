@@ -1,9 +1,11 @@
 import { FC } from "react"
-import { ProjectsItemProps } from "@/@types"
-import { Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter } from "@/components/ui/card"
-import Image from "next/image"
+import { 
+    Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter 
+} from "./ui/card"
 import { TechCard } from "./tech-card"
-import { Animation } from "@/components/animation"
+import { Animation } from "./animation"
+import Image from "next/image"
+import { ProjectsItemProps } from "@/@types"
 
 export const HighlightProjectsItem: FC<ProjectsItemProps> = ({
     project

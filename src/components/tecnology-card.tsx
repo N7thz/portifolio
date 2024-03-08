@@ -1,5 +1,5 @@
 import { FC } from "react"
-import { Card, CardHeader, CardTitle } from "../../ui/card"
+import { Card, CardHeader, CardTitle } from "./ui/card"
 import { TecnologyCardProps } from "@/@types"
 import Image from "next/image"
 

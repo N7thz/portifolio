@@ -1,10 +1,10 @@
 import { FC } from "react"
 import { LangToggle } from "./lang-toggle"
 import { ModeToggle } from "./mode-toggle"
-import { Card, CardTitle } from "../ui/card"
+import { Card, CardTitle } from "./ui/card"
+import { Animation } from "./animation"
 import Link from "next/link"
 import { HeaderProps } from "@/@types"
-import { Animation } from "../animation"
 
 export const Header: FC<HeaderProps> = ({
     header: { about, contact, projects, technologies }

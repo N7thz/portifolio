@@ -9,8 +9,8 @@ import {
     CarouselNext,
     CarouselPrevious,
     type CarouselApi,
-} from "@/components/ui/carousel"
-import { OtherProjectsItem } from "./topics/projects/other-projects-item"
+} from "./ui/carousel"
+import { OtherProjectsItem } from "./other-projects-item"
 import { WindowProject } from "./window-project"
 
 export interface CarouselComponentProps {

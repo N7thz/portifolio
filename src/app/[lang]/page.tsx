@@ -1,7 +1,7 @@
 import { Params } from '@/@types';
-import { CarouselComponent } from '@/components/carousel';
-import { Header } from '@/components/header/header';
-import { Main } from '@/components/main/main';
+
+import { Header } from '@/components/header';
+import { Main } from '@/components/main';
 import { getDictionary } from '@/lib/get-dictionary';
 
 export default async function Home({ params: { lang } }: Params) {

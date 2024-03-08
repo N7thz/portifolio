@@ -12,7 +12,7 @@ import {
 import { ScrollArea, ScrollBar } from "./ui/scroll-area"
 import { WindowProjectProps } from "@/@types"
 import { Animation } from "./animation"
-import { TechCard } from "./topics/projects/tech-card"
+import { TechCard } from "./tech-card"
 import { Terminal } from "lucide-react"
 import Link from "next/link"
 

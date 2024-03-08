@@ -1,10 +1,10 @@
 import { FC } from "react"
 import { MainProps } from "@/@types"
-import { Tecnologies } from "../topics/techlogies/tecnologies"
+import { Tecnologies } from "./tecnologies"
 import { CardHome } from "./card-home"
-import { About } from "../topics/about/about"
-import { Projects } from "../topics/projects/projects"
-import { Animation } from "../animation"
+import { About } from "./about"
+import { Projects } from "./projects"
+import { Animation } from "./animation"
 
 export const Main: FC<MainProps> = ({
     header: {

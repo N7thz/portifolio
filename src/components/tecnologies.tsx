@@ -1,10 +1,10 @@
 import { FC } from "react"
-import { TopicTitle } from "../topic-title"
-import { Card, CardHeader, CardTitle, CardContent } from "../../ui/card"
+import { TopicTitle } from "./topic-title"
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card"
 import { TecnologiesProps } from "@/@types"
 import { technologies as tecs } from "@/lib/tecnologies"
 import { TecnologyCard } from "./tecnology-card"
-import { Animation } from "@/components/animation"
+import { Animation } from "./animation"
 
 export const Tecnologies: FC<TecnologiesProps> = ({ technologies }) => {
 

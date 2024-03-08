@@ -2,10 +2,10 @@
 
 import { FC } from "react"
 import { ProjectsProps } from "@/@types"
-import { TopicTitle } from "../topic-title"
+import { TopicTitle } from "./topic-title"
 import {
     Card, CardHeader, CardTitle, CardContent
-} from "../../ui/card"
+} from "./ui/card"
 import { HighLightProjects } from "./highlight-projects"
 import { OtherProjects } from "./other-projects"
 

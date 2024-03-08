@@ -2,10 +2,10 @@
 
 import { FC } from "react"
 import { TypeProjectsProps, Project } from "@/@types"
-import { Card, CardHeader, CardTitle } from "../../ui/card"
+import { Card, CardHeader, CardTitle } from "./ui/card"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "next/navigation"
-import { TopicTitle } from "../topic-title"
+import { TopicTitle } from "./topic-title"
 
 import { CarouselComponent } from "@/components/carousel"
 import { Animation } from "@/components/animation"

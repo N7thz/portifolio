@@ -2,10 +2,10 @@
 
 import { FC } from "react"
 import { TypeProjectsProps, Project } from "@/@types"
-import { Card, CardHeader, CardTitle, CardContent } from "../../ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "./ui/card"
 import { useQuery } from "@tanstack/react-query"
 import { useParams } from "next/navigation"
-import { TopicTitle } from "../topic-title"
+import { TopicTitle } from "./topic-title"
 import { HighlightProjectsItem } from "./highlight-projects-item"
 import { Animation } from "@/components/animation"
 import { WindowProject } from "@/components/window-project"
@@ -56,7 +56,7 @@ export const HighLightProjects: FC<TypeProjectsProps> = ({
                             exit={{ opacity: 0, x: i % 2 ? -300 : 300 }}
                             transition={{ duration: 0.7 }}
                         >
-                            <WindowProject 
+                            <WindowProject
                                 project={project}
                                 go_to_code={go_to_code}
                             >
