@@ -6,6 +6,7 @@ import Link from "next/link"
 import { CardHomeProps } from "@/@types"
 import "./z_animations.css"
 import Gif from "@/assets/images/gif-home.gif"
+import { Animation } from "./animation"
 
 export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
 
@@ -31,20 +32,27 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                     {summary}
                 </CardDescription>
                 <CardFooter className="h-full flex justify-end">
-                    <Button
-                        variant={"outline"}
-                        className="scale-110 border-primary hover:scale-105 duration-300"
+                    <Animation
+                        initial={{ opacity: 0, scale: 0 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        exit={{ opacity: 0, scale: 0 }}
+                        transition={{ duration: 0.5 }}
                     >
-                        <Link
-                            href="/pt/curriculo-nathan-ferreira.pdf"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            download
-                            className="text-lg p-1"
+                        <Button
+                            variant={"outline"}
+                            className="scale-110 border-primary hover:scale-105 duration-300"
                         >
-                            Download CV
-                        </Link>
-                    </Button>
+                            <Link
+                                href="/pt/curriculo-nathan-ferreira.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                download
+                                className="text-lg p-1"
+                            >
+                                Download CV
+                            </Link>
+                        </Button>
+                    </Animation>
                 </CardFooter>
             </div>
             <Image

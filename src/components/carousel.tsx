@@ -52,6 +52,7 @@ export const CarouselComponent: FC<CarouselComponentProps> = ({ go_to_code, proj
                         projects.map(project =>
                             <CarouselItem
                                 key={project.id}
+                                className="drop-shadow-2xl"
                             >
                                 <WindowProject
                                     project={project}

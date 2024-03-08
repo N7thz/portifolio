@@ -5,13 +5,14 @@ import { CardHome } from "./card-home"
 import { About } from "./about"
 import { Projects } from "./projects"
 import { Animation } from "./animation"
+import { Contacts } from "./contacts"
 
 export const Main: FC<MainProps> = ({
     header: {
         about, contact, projects, technologies
     },
     main: {
-        message_animation, summary, aboutText, highlihgt, other, go_to_code
+        message_animation, summary, aboutText, highlihgt, other, go_to_code, or, form
     }
 }) => {
 
@@ -65,6 +66,19 @@ export const Main: FC<MainProps> = ({
                     highlihgt={highlihgt}
                     projects={projects}
                     go_to_code={go_to_code}
+                />
+            </Animation>
+
+            <Animation
+                initial={{ opacity: 0, x: -100 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+            >
+                <Contacts
+                    form={form}
+                    contact={contact}
+                    or={or}
                 />
             </Animation>
         </main>

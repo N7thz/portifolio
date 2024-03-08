@@ -21,7 +21,7 @@ export const Header: FC<HeaderProps> = ({
             transition={{ duration: 0.5 }}
         >
             <header
-                className="bg-gradient-to-r from-teal-500 to-green-300  dark:from-violet-600 dark:to-indigo-600 pb-1 drop-shadow-2xl z-50 fixed top-0 left-0 right-0 bottom-auto"
+                className="bg-gradient-to-r from-teal-500 to-teal-300  dark:from-violet-600 dark:to-indigo-600 pb-1 drop-shadow-2xl z-50 fixed top-0 left-0 right-0 bottom-auto"
             >
                 <Card
                     className="border-none rounded-none p-3 flex justify-between"
@@ -37,7 +37,7 @@ export const Header: FC<HeaderProps> = ({
                             >
                                 <CardTitle
 
-                                    className=" bg-gradient-to-b from-teal-500 to-green-300 dark:from-violet-600 dark:to-indigo-600 bg-clip-text text-transparent underline cursor-pointer duration-150 hover:scale-110"
+                                    className=" bg-gradient-to-b from-primary to-teal-300 dark:from-violet-600 dark:to-indigo-600 bg-clip-text text-transparent underline cursor-pointer duration-150 hover:scale-110"
                                 >
                                     {option}
                                 </CardTitle>

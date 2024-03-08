@@ -4,6 +4,7 @@ import { Dispatch, SetStateAction, ReactNode } from "react"
 import {
 	AnimationControls, Target, TargetAndTransition, Transition, VariantLabels
 } from "framer-motion"
+import { LucideIcon } from "lucide-react"
 
 export interface Params {
 	params: {
@@ -30,6 +31,20 @@ interface Main {
 	highlihgt: string
 	other: string
 	go_to_code: string
+	or: string
+	form: Form
+}
+
+export interface Form {
+	enter_contact: string
+	description: string
+	subject: string
+	subject_placeholder: string
+	message: string
+	message_placeholder: string
+	button_text: string
+	input_subject: string
+	input_message: string
 }
 
 export interface Dictionary {
@@ -59,6 +74,8 @@ export interface MainProps extends HeaderProps {
 		highlihgt: string
 		other: string
 		go_to_code: string
+		or: string
+		form: Form
 	}
 }
 
@@ -134,13 +151,36 @@ export interface AnimationProps {
 	animate?: AnimationControls | TargetAndTransition | VariantLabels | boolean;
 }
 
-export interface ProjectsItemProps{
-    project: Project
+export interface ProjectsItemProps {
+	project: Project
 }
 
 export interface WindowProjectProps {
 
-    children: ReactNode
-    project: Project
-	go_to_code:string
+	children: ReactNode
+	project: Project
+	go_to_code: string
+}
+
+export interface ContactsProps {
+	contact: string
+	or: string
+	form: Form
+}
+
+export interface Contact {
+	id: number,
+	description: string
+	Icon: LucideIcon
+	link?: string
+}
+
+export interface ContactCardProps {
+	children: ReactNode
+	description: string
+}
+
+export interface FormProps {
+
+	form: Form
 }

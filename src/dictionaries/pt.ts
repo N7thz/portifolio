@@ -14,6 +14,18 @@ const dictionary: DictionaryRequest = {
         highlihgt: "projetos em destaque",
         other: "outros projetos",
         go_to_code: "código do projeto",
+        or: "ou",
+        form: {
+            enter_contact: "entre em contato",
+            description: "mande um e-mail sobre contatos profissionais, feedbacks e etc.",
+            subject: "assunto:",
+            subject_placeholder: "digite o assunto do contato...",
+            message: "mensagem",
+            message_placeholder: "digite a mensagem...",
+            button_text: "enviar",
+            input_message: "o assunto é obrigatório para enviar o email.",
+            input_subject: "a mensagem é obrigatória para o enviar o email.",
+        }
     }
 }
 

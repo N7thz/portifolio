@@ -10,7 +10,7 @@ export const TecnologyCard: FC<TecnologyCardProps> = ({ tec }) => {
     return (
 
         <Card
-            className="w-48 flex flex-col items-center justify-between capitalize border-2 border-border duration-500 hover:border-primary"
+            className="w-48 flex flex-col items-center justify-between capitalize border-2 border-border duration-500 hover:border-primary drop-shadow-md"
         >
             <Image
                 src={image}

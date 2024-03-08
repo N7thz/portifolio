@@ -1,6 +1,6 @@
 import { FC } from "react"
-import { 
-    Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter 
+import {
+    Card, CardHeader, CardTitle, CardContent, CardDescription, CardFooter
 } from "./ui/card"
 import { TechCard } from "./tech-card"
 import { Animation } from "./animation"
@@ -18,7 +18,9 @@ export const HighlightProjectsItem: FC<ProjectsItemProps> = ({
 
     return (
 
-        <Card className="w-1/2 cursor-pointer hover:scale-95 duration-300 border border-primary">
+        <Card
+            className="w-1/2 cursor-pointer hover:scale-95 duration-300 border border-primary drop-shadow-2xl"
+        >
             <CardContent>
                 <Image
                     src={cover}
