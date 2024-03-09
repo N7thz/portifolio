@@ -1,6 +1,6 @@
 "use client"
 
-import { FC } from "react"
+import { FC, useState } from "react"
 import { FormProps } from "@/@types"
 import { useForm } from "react-hook-form"
 import z from "zod"
@@ -13,10 +13,17 @@ import { Input } from "./ui/input"
 import { Textarea } from "./ui/textarea"
 import { Button } from "./ui/button"
 import { Animation } from "./animation"
+import { twMerge } from "tailwind-merge"
+import { Toaster } from "./toaster"
+import { Check, XCircle } from "lucide-react"
 
 export const Form: FC<FormProps> = ({ form }) => {
 
     type FormType = z.infer<typeof formSchema>
+
+    const [isSend, setIsSend] = useState<boolean>(false)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
+    const [isError, setIsError] = useState<boolean>(false)
 
     const {
         enter_contact,
@@ -27,7 +34,11 @@ export const Form: FC<FormProps> = ({ form }) => {
         message_placeholder,
         button_text,
         input_subject,
-        input_message, 
+        input_message,
+        toaster_error_message,
+        toaster_error_title,
+        toaster_sucess_message,
+        toaster_sucess_title
     } = form
 
     const formSchema = z.object({
@@ -41,22 +52,57 @@ export const Form: FC<FormProps> = ({ form }) => {
 
     const {
         register,
-        handleSubmit, 
+        handleSubmit,
+        reset,
         formState: { errors }
     } = useForm<FormType>({
         resolver: zodResolver(formSchema)
     })
 
-    console.log(errors)
+    async function sendEmail(data: FormType) {
 
-    function sendEmail(data: FormType) {
+        if (!isSend) {
 
-        console.log("email enviado", data)
+            setIsSend(true)
+
+            const response = await fetch("/api/send", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+
+            if (response.status == 200) {
+
+                setIsOpen(true)
+
+                reset()
+
+                setTimeout(() => setIsOpen(false), 2000)
+            } else {
+
+                setIsError(true)
+
+                setTimeout(() => {
+                    setIsError(false)
+                }, 2000)
+            }
+
+        } else {
+
+            const timeout = 1000 * 60 * 10 // timeout for send email
+
+            setIsError(true)
+
+            setTimeout(() => {
+                setIsError(false)
+            }, 2000)
+
+            setTimeout(() => setIsSend(false), timeout)
+        }
     }
 
     return (
 
-        <Card className="w-full capitalize drop-shadow-lg">
+        <Card className="w-full capitalize drop-shadow-lg relative">
             <CardHeader>
                 <CardTitle className="text-2xl">
                     {enter_contact}
@@ -74,7 +120,15 @@ export const Form: FC<FormProps> = ({ form }) => {
                             {subject}
                         </Label>
                         <Input
-                            placeholder={subject_placeholder}
+                            className={
+                                errors.subject &&
+                                "border-2 border-red-600 placeholder:text-red-600 italic"
+                            }
+                            placeholder={
+                                errors.subject
+                                    ? errors.subject.message
+                                    : subject_placeholder
+                            }
                             {...register("subject")}
                         />
                     </div>
@@ -83,8 +137,16 @@ export const Form: FC<FormProps> = ({ form }) => {
                             {message}
                         </Label>
                         <Textarea
-                            className="max-h-[400px]"
-                            placeholder={message_placeholder}
+                            className={twMerge(
+                                "max-h-[400px]",
+                                errors.message &&
+                                "border-2 border-red-600 placeholder:text-red-600 italic"
+                            )}
+                            placeholder={
+                                errors.message
+                                    ? errors.message?.message
+                                    : message_placeholder
+                            }
                             {...register("message")}
                         />
                     </div>
@@ -105,6 +167,25 @@ export const Form: FC<FormProps> = ({ form }) => {
                     </Animation>
                 </CardFooter>
             </form>
+            {isOpen &&
+                <Toaster
+                    toaster_title={toaster_sucess_title}
+                    toaster_message={toaster_sucess_message}
+                    variant={"default"}
+                    className="border border-primary"
+                >
+                    <Check />
+                </Toaster>
+            }
+            {isError &&
+                <Toaster
+                    toaster_title={toaster_error_title}
+                    toaster_message={toaster_error_message}
+                    variant={"destructive"}
+                >
+                    <XCircle />
+                </Toaster>
+            }
         </Card>
     )
 }

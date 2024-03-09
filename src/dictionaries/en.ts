@@ -25,6 +25,10 @@ export const dictionary: DictionaryRequest = {
             button_text: "send",
             input_message: "the subject is required to send the email.",
             input_subject: "the message is required to send the email.",
+            toaster_sucess_title: "sucess",
+            toaster_sucess_message: "The email has been sent successfully.",
+            toaster_error_title: "error",
+            toaster_error_message: "An error occurred while sending the email. Please try again later.."
         }
     },
 }

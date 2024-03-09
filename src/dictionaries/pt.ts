@@ -25,6 +25,10 @@ const dictionary: DictionaryRequest = {
             button_text: "enviar",
             input_message: "o assunto é obrigatório para enviar o email.",
             input_subject: "a mensagem é obrigatória para o enviar o email.",
+            toaster_sucess_title: "sucesso",
+            toaster_sucess_message: "O e-mail foi enviado com sucesso.",
+            toaster_error_title: "error",
+            toaster_error_message: "Ocorreu um erro ao enviar o e-mail.Tente novamente mais tarde."
         }
     }
 }

@@ -1,27 +1,31 @@
-/* eslint-disable @next/next/no-img-element */
 import { FC } from "react"
 import {
-    Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle
+    Card, CardContent,CardHeader, CardTitle
 } from "@/components/ui/card"
-import { useQuery } from "@tanstack/react-query"
 
 interface EmailTemplateProps {
 
-    firstName: string
+    subject: string
+    message: string
 }
 
-export const EmailTemplate: FC<EmailTemplateProps> = async ({ firstName }) => {
+export const EmailTemplate: FC<EmailTemplateProps> = async ({
+    subject, message
+}) => {
 
     return (
 
-        <div
-            className="min-h-screen flex items-center justify-center"
+        <Card
+            className="w-full border-2 border-primary drop-shadow-xl"
         >
-            <Card
-                className="border border-indigo-400 bg-indigo-400 m-3"
-            >
-
-            </Card>
-        </div>
+            <CardHeader>
+                <CardTitle>
+                    {subject}
+                </CardTitle>
+            </CardHeader>
+            <CardContent>
+                {message}
+            </CardContent>
+        </Card>
     )
 }

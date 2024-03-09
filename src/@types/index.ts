@@ -1,6 +1,6 @@
 import { Locale } from "@/i18n-config"
 import { StaticImageData } from "next/image"
-import { Dispatch, SetStateAction, ReactNode } from "react"
+import { Dispatch, SetStateAction, ReactNode, ComponentProps } from "react"
 import {
 	AnimationControls, Target, TargetAndTransition, Transition, VariantLabels
 } from "framer-motion"
@@ -45,6 +45,10 @@ export interface Form {
 	button_text: string
 	input_subject: string
 	input_message: string
+	toaster_sucess_title: string
+	toaster_sucess_message: string
+	toaster_error_title: string
+	toaster_error_message: string
 }
 
 export interface Dictionary {
@@ -142,7 +146,7 @@ export interface TypeProjectsProps {
 	go_to_code: string
 }
 
-export interface AnimationProps {
+export interface AnimationProps extends ComponentProps<"div"> {
 	children: ReactNode
 	initial?: boolean | Target | VariantLabels
 	whileInView?: VariantLabels | TargetAndTransition
@@ -183,4 +187,9 @@ export interface ContactCardProps {
 export interface FormProps {
 
 	form: Form
+}
+
+export interface ReqProps {
+	subject: string
+	message: string
 }

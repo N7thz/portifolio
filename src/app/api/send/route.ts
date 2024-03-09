@@ -1,17 +1,25 @@
+import { ReqProps } from '@/@types'
 import { EmailTemplate } from '@/components/email-template'
-import { Resend } from "resend" 
+import { NextRequest } from 'next/server'
+import { Resend } from "resend"
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const RESEND_API_KEY="re_TdRiPZ7T_FE589fZfTww96Bp7ptXwzoUp"
 
-export async function POST() {
+const resend = new Resend(RESEND_API_KEY)
+
+export async function POST(req: NextRequest) {
+
+    const body: ReqProps = await req.json()
+
+    const { message, subject } = body
 
     try {
         const data = await resend.emails.send({
             from: 'Nathan <onboarding@resend.dev>',
             to: ["nathanferreiradev@gmail.com"],
-            subject: 'Hello world',
-            react: EmailTemplate({ firstName: 'Nathan' }) as React.ReactElement,
-        }) 
+            subject: subject,
+            react: EmailTemplate({ message, subject }) as React.ReactElement,
+        })
 
         return Response.json(data)
     } catch (error) {
