@@ -45,7 +45,7 @@ export const Header: FC<HeaderProps> = ({
                                     transition={{ duration: 0.5 }}
                                     className='m-auto'
                                 >
-                                    <Menu />
+                                    <Menu className="text-primary"/>
                                 </Animation>
                             </Button>
                         </SheetTrigger>
@@ -65,7 +65,6 @@ export const Header: FC<HeaderProps> = ({
                                         scroll
                                     >
                                         <CardTitle
-
                                             className="text-primary hover:underline cursor-pointer duration-150 hover:scale-110"
                                         >
                                             {option}

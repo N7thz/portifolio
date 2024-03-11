@@ -35,7 +35,7 @@ export const About: FC<AboutProps> = ({ about, aboutText }) => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     exit={{ opacity: 0, scale: 0 }}
                     transition={{ duration: 0.5 }}
-                    className='m-auto'
+                    className='m-auto drop-shadow-xl'
                 >
                     <Image
                         src={"https://avatars.githubusercontent.com/n7thz"}

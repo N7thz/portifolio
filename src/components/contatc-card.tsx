@@ -9,7 +9,7 @@ export const ContactCard: FC<ContactCardProps> = ({
     return (
 
         <Card
-            className="w-64 hover:border-primary hover:scale-95 duration-300 group drop-shadow-lg"
+            className="min-w-56 hover:border-primary hover:scale-95 duration-300 group drop-shadow-lg"
         >
             <CardHeader className="flex flex-col items-center">
                 <CardTitle className="group-hover:text-primary">

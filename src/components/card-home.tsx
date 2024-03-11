@@ -5,8 +5,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { Animation } from "./animation"
 import { CardHomeProps } from "@/@types"
-import "./z_animations.css"
 import Gif from "@/assets/images/gif-home.gif"
+import { Minus } from "lucide-react"
 
 export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
 
@@ -19,12 +19,9 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 className="w-1/2 flex flex-col gap-4 max-md:w-full"
             >
                 <CardTitle
-                    className="text-4xl pt-8 px-3 relative"
+                    className="text-4xl pt-8 px-3"
                 >
                     {message_animation}
-                    <div
-                        className="w-1 h-8 bg-primary line absolute bottom-1 left-60"
-                    />
                 </CardTitle>
                 <CardDescription
                     className="text-xl p-3"
@@ -62,7 +59,7 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 width={600}
                 height={600}
                 alt="gif home"
-                className="w-1/2 2xl:w-1/3 max-md:w-2/3 max-md:m-auto max-md:p-4 max-md:rounded-lg" 
+                className="w-1/2 2xl:w-1/3 max-md:w-2/3 max-md:m-auto max-md:p-4 max-md:rounded-lg"
             />
         </Card>
     )
