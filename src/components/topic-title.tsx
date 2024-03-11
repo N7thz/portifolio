@@ -6,7 +6,7 @@ export const TopicTitle: FC<TopicProps> = ({ topic }) => {
 
     return (
 
-        <div className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center max-phone:gap-3">
             <div className="flex justify-center relative pl-2">
                 <ChevronLeft
                     size={32}

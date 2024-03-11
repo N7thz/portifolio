@@ -37,7 +37,7 @@ export const HighLightProjects: FC<TypeProjectsProps> = ({
         >
             <CardHeader>
                 <CardTitle
-                    className="text-2xl capitalize"
+                    className="text-2xl capitalize max-phone:text-xl"
                 >
                     <TopicTitle
                         topic={title}
@@ -45,7 +45,7 @@ export const HighLightProjects: FC<TypeProjectsProps> = ({
                 </CardTitle>
             </CardHeader>
             <CardContent
-                className="flex flex-col gap-8 justify-center items-center"
+                className="flex flex-col gap-8 justify-center items-center max-phone:p-0"
             >
                 {
                     projectsResponse.map((project, i) =>

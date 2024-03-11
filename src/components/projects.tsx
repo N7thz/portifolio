@@ -28,7 +28,9 @@ export const Projects: FC<ProjectsProps> = ({
                     />
                 </CardTitle>
             </CardHeader>
-            <CardContent className="w-full flex flex-col items-center gap-4">
+            <CardContent
+                className="w-full flex flex-col items-center gap-4 max-phone:p-0"
+            >
                 <HighLightProjects
                     go_to_code={go_to_code}
                     title={highlihgt}

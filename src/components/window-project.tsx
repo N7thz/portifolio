@@ -30,13 +30,15 @@ export const WindowProject: FC<WindowProjectProps> = ({
                     {children}
                 </div>
             </DialogTrigger>
-            <DialogContent className="w-10/12 flex">
+            <DialogContent
+                className="w-10/12 flex max-md:w-11/12 max-md:flex-col max-phone:p-1 max-phone:w-1/2"
+            >
                 <video
                     src={video}
                     controls
-                    className="w-2/3 border-2 rounded-lg"
+                    className="w-2/3 border-2 rounded-lg max-md:w-full"
                 />
-                <div className="flex flex-col w-1/3">
+                <div className="flex flex-col w-1/3 max-md:w-full">
                     <div className="w-full flex flex-col gap-4 p-2">
                         <DialogHeader>
                             <DialogTitle className="text-3xl capitalize">
@@ -77,7 +79,7 @@ export const WindowProject: FC<WindowProjectProps> = ({
                             legacyBehavior
                         >
                             <a
-                                className="bg-primary w-full flex justify-center items-center gap-2 rounded-md text-xl p-2 m-2 hover:scale-95 duration-200"
+                                className="bg-primary w-full flex justify-center items-center gap-2 rounded-md text-xl p-2 m-2 hover:scale-95 duration-200 max-md:w-1/2 max-phone:w-11/12"
                                 target="_blank"
                             >
                                 {go_to_code}

@@ -7,7 +7,9 @@ export const ContactsLinks = () => {
 
     return (
 
-        <div className="justify-around flex">
+        <div
+            className="justify-around flex max-lg:grid max-lg:grid-cols-2 max-lg:w-2/3 max-lg:m-auto max-lg:gap-12 max-md:w-10/12 max-sm:grid-cols-1"
+        >
             {contacts.map((contact, index) => {
 
                 const { description, Icon, id, link } = contact

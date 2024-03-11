@@ -12,7 +12,7 @@ export const Tecnologies: FC<TecnologiesProps> = ({ technologies }) => {
 
         <Card
             id={technologies}
-            className="border-2 border-primary drop-shadow-xl"
+            className="w-full border-2 border-primary drop-shadow-xl"
         >
             <CardHeader>
                 <CardTitle
@@ -23,7 +23,9 @@ export const Tecnologies: FC<TecnologiesProps> = ({ technologies }) => {
                     />
                 </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-wrap justify-around gap-4">
+            <CardContent
+                className="w-2/3 m-auto grid grid-cols-4 gap-6 max-lg:w-full max-md:grid-cols-3 max-sm:grid-cols-2 max-phone:grid-cols-1"
+            >
                 {tecs.map((tec, i) =>
                     <Animation
                         key={tec.id}

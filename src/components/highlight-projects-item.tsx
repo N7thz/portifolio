@@ -19,7 +19,7 @@ export const HighlightProjectsItem: FC<ProjectsItemProps> = ({
     return (
 
         <Card
-            className="w-1/2 cursor-pointer hover:scale-95 duration-300 border border-primary drop-shadow-2xl"
+            className="w-1/2 cursor-pointer hover:scale-95 duration-300 border border-primary drop-shadow-2xl max-md:w-full"
         >
             <CardContent>
                 <Image
@@ -28,7 +28,7 @@ export const HighlightProjectsItem: FC<ProjectsItemProps> = ({
                     height={2000}
                     quality={100}
                     alt={title}
-                    className="w-full rounded-lg p-1"
+                    className="w-full rounded-lg pt-1"
                 />
             </CardContent>
             <CardHeader className="flex flex-col gap-3">

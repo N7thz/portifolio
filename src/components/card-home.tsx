@@ -3,20 +3,20 @@ import { Card, CardTitle, CardDescription, CardFooter } from "./ui/card"
 import { Button } from "./ui/button"
 import Image from "next/image"
 import Link from "next/link"
+import { Animation } from "./animation"
 import { CardHomeProps } from "@/@types"
 import "./z_animations.css"
 import Gif from "@/assets/images/gif-home.gif"
-import { Animation } from "./animation"
 
 export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
 
     return (
 
         <Card
-            className="flex border-2 border-primary drop-shadow-xl overflow-hidden"
+            className="flex border-2 border-primary drop-shadow-xl overflow-hidden 2xl:justify-between max-md:flex-col-reverse"
         >
             <div
-                className="w-1/2 flex flex-col gap-4"
+                className="w-1/2 flex flex-col gap-4 max-md:w-full"
             >
                 <CardTitle
                     className="text-4xl pt-8 px-3 relative"
@@ -31,7 +31,9 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 >
                     {summary}
                 </CardDescription>
-                <CardFooter className="h-full flex justify-end">
+                <CardFooter
+                    className="h-full flex justify-end 2xl:items-end"
+                >
                     <Animation
                         initial={{ opacity: 0, scale: 0 }}
                         whileInView={{ opacity: 1, scale: 1 }}
@@ -60,7 +62,7 @@ export const CardHome: FC<CardHomeProps> = ({ message_animation, summary }) => {
                 width={600}
                 height={600}
                 alt="gif home"
-                className="w-1/2"
+                className="w-1/2 2xl:w-1/3 max-md:w-2/3 max-md:m-auto max-md:p-4 max-md:rounded-lg" 
             />
         </Card>
     )

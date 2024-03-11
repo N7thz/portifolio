@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useEffect, FC } from "react"
-import { Project } from "@/@types"
+import { CarouselComponentProps, Project } from "@/@types"
 import {
     Carousel,
     CarouselContent,
@@ -13,13 +13,9 @@ import {
 import { OtherProjectsItem } from "./other-projects-item"
 import { WindowProject } from "./window-project"
 
-export interface CarouselComponentProps {
-
-    projects: Project[]
-    go_to_code: string
-}
-
-export const CarouselComponent: FC<CarouselComponentProps> = ({ go_to_code, projects }) => {
+export const CarouselComponent: FC<CarouselComponentProps> = ({
+    go_to_code, projects
+}) => {
 
     const [api, setApi] = useState<CarouselApi>()
     const [current, setCurrent] = useState(0)
@@ -41,11 +37,11 @@ export const CarouselComponent: FC<CarouselComponentProps> = ({ go_to_code, proj
     return (
 
         <div
-            className="w-2/3 flex flex-col items-center justify-center gap-2 p-4"
+            className="w-2/3 flex flex-col items-center justify-center gap-2 max-sm:gap-1 p-4"
         >
             <Carousel
                 setApi={setApi}
-                className="w-3/4 "
+                className="w-3/4 max-lg:w-3/5 max-md:w-1/2 max-sm:w-2/5 max-phone:w-1/5"
             >
                 <CarouselContent>
                     {

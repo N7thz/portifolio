@@ -102,7 +102,7 @@ export const Form: FC<FormProps> = ({ form }) => {
 
     return (
 
-        <Card className="w-full capitalize drop-shadow-lg relative">
+        <Card className="w-full capitalize drop-shadow-lg relative 2xl:w-11/12">
             <CardHeader>
                 <CardTitle className="text-2xl">
                     {enter_contact}

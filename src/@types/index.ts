@@ -193,3 +193,9 @@ export interface ReqProps {
 	subject: string
 	message: string
 }
+
+export interface CarouselComponentProps {
+
+    projects: Project[]
+    go_to_code: string
+}
