@@ -1,7 +1,7 @@
 # Portfólio de Desenvolvedor Full Stack 🚀
 
-![alt text](image-1.png)
-![alt text](image-2.png)
+![alt text](src\assets\images\image-1.png)
+![alt text](src\assets\images\image.png)
 
 Esse **portfólio** é um acúmulo de tudo que venho estudando nos últimos meses. Ele possui **dark mode** e **light mode**, e está disponível tanto em **inglês** quanto em **português**. 😊
 
